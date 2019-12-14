@@ -1,0 +1,81 @@
+.movie-bg {
+    padding: 5%;
+    background-image: linear-gradient(to bottom, orange, orange 15%, white 20%);
+
+    .poster {
+        width: 150px;
+        height: auto;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .plus-btn {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 25px;
+            position: absolute;
+            bottom: -10px;
+            right: -15px;
+        }
+    }
+
+    .movie-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: sans-serif;
+
+        &>div {
+            display: flex;
+            align-items: center;
+
+            .movie-title {
+                width: min-content;
+                text-align: center;
+                padding-right: 5px;
+                font-size: 18px;
+            }
+
+            .imdb-rating {
+                border: 2px solid orange;
+                padding: 0 5px;
+                margin-right: 10px;
+                height: fit-content;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .movie-info {
+        display: flex;
+        margin-top: 5px;
+        font-family: sans-serif;
+    }
+
+    .storyline {
+        font-size: 14px;
+    }
+
+    .movie-credits {
+        display: grid;
+        grid-gap: 5px;
+        font-size: 14px;
+
+        .credit-names {
+            grid-column: 2;
+        }
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,36 @@
+.movie-list-bg {
+    padding: 8%;
+    background-image: linear-gradient(to bottom, orange, orange 30%, white 40%);
+    background-attachment: fixed;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .movie-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 20;
+        font-family: sans-serif;
+
+        .movie-title {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .imdb-rating {
+            margin: 15px 0 25px;
+
+            b {
+                font-size: 24px;
+            }
+            
+            span {
+                color: gray;
+            }
+        }
+    }
+}

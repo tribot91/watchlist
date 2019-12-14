@@ -15,23 +15,14 @@ body {
   content: ", ";
 }
 
-.childDiv {
-  position: absolute;
-  bottom: -10px;
-  right: -15px;
-}
-
-.parentDiv {
-  position: relative;
-}
-
-.button {
+.btn {
   padding: 20px;
   text-align: center;
   border-radius: 5px;
   width: 80%;
   font-weight: bold;
   color: white;
+  font-family: sans-serif;
 }
 
 .rounded {
@@ -63,7 +54,7 @@ body {
   color: white;
 }
 
-.details {
+.movie-info {
   font-size: 12px;
   color: gray;
 }
