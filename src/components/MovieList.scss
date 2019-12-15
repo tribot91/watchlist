@@ -1,6 +1,8 @@
+@import '../index.scss';
+
 .movie-list-bg {
     padding: 8%;
-    background-image: linear-gradient(to bottom, orange, orange 30%, white 40%);
+    background-image: linear-gradient(to bottom, $base-color, $base-color 30%, white 40%);
     background-attachment: fixed;
 
     img {
