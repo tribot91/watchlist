@@ -1,6 +1,12 @@
+@import '../index.scss';
+
+.red-bg {
+    background-color: $secondary-color;
+}
+
 .movie-bg {
     padding: 5%;
-    background-image: linear-gradient(to bottom, orange, orange 15%, white 20%);
+    background-image: linear-gradient(to bottom, $base-color, $base-color 15%, white 20%);
 
     .poster {
         width: 150px;
@@ -14,8 +20,8 @@
 
         .plus-btn {
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 33px;
+            height: 33px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,6 +30,7 @@
             position: absolute;
             bottom: -10px;
             right: -15px;
+            font-weight: bold;
         }
     }
 
@@ -45,7 +52,7 @@
             }
 
             .imdb-rating {
-                border: 2px solid orange;
+                border: 2px solid $base-color;
                 padding: 0 5px;
                 margin-right: 10px;
                 height: fit-content;

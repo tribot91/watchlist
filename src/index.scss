@@ -12,7 +12,7 @@ body {
 }
 
 .comma:not(:last-child):after {
-  content: ", ";
+  content: ', ";
 }
 
 .btn {
@@ -37,10 +37,6 @@ body {
   background-color: $base-color;
 }
 
-.red-bg {
-  background-color: $secondary-color;
-}
-
 .top-margin {
   margin-top: 25px;
 }
@@ -57,6 +53,10 @@ body {
 .movie-info {
   font-size: 12px;
   color: gray;
+}
+
+.genres {
+  padding: 0 3px;
 }
 
 // Loader

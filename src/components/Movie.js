@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Movie.scss'
+import './Movie.scss';
 import RatingBar from './RatingBar';
 
 
@@ -29,7 +29,7 @@ class Movie extends Component {
   render() {
     return (
       this.state.loading ?
-        <div className="spinner"></div> :
+        <div className='spinner'></div> :
         <div className='movie-bg'>
           <div className='poster'>
             <img src={this.state.movie.posterurl}
@@ -49,12 +49,13 @@ class Movie extends Component {
           </span>
           <div className='movie-info'>
             {this.state.movie.year} &middot;
-            {(this.state.movie.genres || [])
-              .map(genre => <span
+            <span className='genres'>
+              {(this.state.movie.genres || []).map(genre => <span
                 key={genre}
-                className='comma'>&nbsp;{genre}
+                className='comma'>{genre}
               </span>)}
-            &nbsp;&middot; {this.hour}h {this.minute}min
+            </span>
+            &middot; {this.hour}h {this.minute}min
           </div>
           <div className='small-top-margin storyline'>{this.state.movie.storyline}</div>
           <hr className='top-margin' />
@@ -62,19 +63,19 @@ class Movie extends Component {
             <b>Director: </b>
             <span className='credit-names'>
               {(this.state.movie.directors || [])
-                .map(director => <span key={director} className="comma orange" href={'#'}>{director}</span>)}
+                .map(director => <span key={director} className='comma orange' href={'#'}>{director}</span>)}
               {(this.state.movie.directors || []).length > 2 ? `| ${(this.state.movie.directors || []).length - 2} more credits >>` : null}
             </span>
             <b>Writers: </b>
             <span className='credit-names'>
               {(this.state.movie.writers || []).slice(0, 2)
-                .map(writer => <span key={writer} className="comma orange" href={'#'}>{writer}</span>)}
+                .map(writer => <span key={writer} className='comma orange' href={'#'}>{writer}</span>)}
               {(this.state.movie.writers || []).length > 2 ? `| ${(this.state.movie.writers || []).length - 2} more credits >>` : null}
             </span>
             <b>Stars: </b>
             <span className='credit-names'>
               {(this.state.movie.actors || []).slice(0, 3)
-                .map(actor => <span key={actor} className="comma orange" href={'#'}>{actor}</span>)}
+                .map(actor => <span key={actor} className='comma orange' href={'#'}>{actor}</span>)}
               {(this.state.movie.actors || []).length > 2 ? ' | See full cast & crew >>' : null}
             </span>
           </div>
