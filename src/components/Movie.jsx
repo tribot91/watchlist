@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import './Movie.scss';
 import RatingBar from './RatingBar';
 import NotFound from './NotFound';
+import { connect } from "react-redux";
+import selectMovie from '../actions';
 
 class Movie extends Component {
   constructor() {
     super();
-    this.state = { isOnWatchlist: false, movie: {}, loading: true, notFound: false };
+    this.state = { movie: {}, loading: true, notFound: false };
   }
 
   componentWillMount() {
@@ -42,9 +44,9 @@ class Movie extends Component {
               <img src={this.state.movie.posterurl}
                 className='rounded'
                 alt='poster' />
-              <div onClick={() => { this.setState({ isOnWatchlist: !this.state.isOnWatchlist }) }}
-                className={`plus-btn ${this.state.isOnWatchlist ? 'red-bg' : 'orange-bg'}`}>
-                {this.state.isOnWatchlist ? '-' : '+'}
+              <div onClick={() => this.props.selectMovie()}
+                className={`plus-btn ${this.props.isOnWatchlist ? 'red-bg' : 'orange-bg'}`}>
+                {this.props.isOnWatchlist ? '-' : '+'}
               </div>
             </div>
             <span className='top-margin movie-details'>
@@ -73,7 +75,7 @@ class Movie extends Component {
                   .map(director => <span key={director} className='comma orange' href={'#'}>{director}</span>)}
                 {(this.state.movie.directors || []).length > 2 ? `| ${(this.state.movie.directors || []).length - 2} more credits >>` : null}
               </span>
-              <b>Writers: </b>
+              <b>Writers: </b> {this.props.isOnWatchlist}
               <span className='credit-names'>
                 {(this.state.movie.writers || []).slice(0, 2)
                   .map(writer => <span key={writer} className='comma orange' href={'#'}>{writer}</span>)}
@@ -87,9 +89,9 @@ class Movie extends Component {
               </span>
             </div>
             <div className='top-margin btn-container'>
-              <div className={`btn ${this.state.isOnWatchlist ? 'red-bg' : 'orange-bg'}`}
-                onClick={() => { this.setState({ isOnWatchlist: !this.state.isOnWatchlist }) }} >
-                {this.state.isOnWatchlist ? '- REMOVE FROM WATCHLIST' : '+ ADD TO WATCHLIST'}
+              <div className={`btn ${this.props.isOnWatchlist ? 'red-bg' : 'orange-bg'}`}
+                onClick={() => this.props.selectMovie()} >
+                {this.props.isOnWatchlist ? '- REMOVE FROM WATCHLIST' : '+ ADD TO WATCHLIST'}
               </div>
             </div>
           </div>
@@ -97,4 +99,13 @@ class Movie extends Component {
   }
 }
 
-export default Movie;
+const mapStateToProps = state => {
+  return {
+    isOnWatchlist: state.isOnWatchlist,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { selectMovie }
+)(Movie);
