@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import movielist from '../data/movielist.json'
+import movielist from '../data/movielist.json';
 import { Link } from 'react-router-dom';
 import RatingBar from './RatingBar';
 import './MovieList.scss';
